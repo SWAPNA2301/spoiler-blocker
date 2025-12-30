@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { width: 200px; padding: 10px; font-family: sans-serif; }
+        input { width: 100%; margin-bottom: 10px; padding: 5px; box-sizing: border-box;}
+        button { width: 100%; background: #ff4d4d; color: white; border: none; padding: 8px; cursor: pointer; }
+        button:hover { background: #e60000; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #eee; margin: 2px 0; padding: 5px; display: flex; justify-content: space-between; }
+        span.remove { cursor: pointer; color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h3>Spoiler Blocker</h3>
+    <input type="text" id="wordInput" placeholder="Enter keyword...">
+    <button id="addBtn">Block Word</button>
+    <ul id="wordList"></ul>
+    <script src="popup.js"></script>
+</body>
+</html>

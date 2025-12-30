@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spoiler Blocker Live Demo</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        
+        /* The Simulator Header */
+        .simulator-box {
+            background: #f0f2f5; padding: 20px; border-radius: 12px; border: 1px solid #ddd;
+            margin-bottom: 40px; text-align: center;
+        }
+        .simulator-box input { padding: 10px; width: 60%; border-radius: 6px; border: 1px solid #ccc; }
+        .simulator-box button { padding: 10px 20px; background: #ff4757; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;}
+        .simulator-box button:hover { background: #e84148; }
+
+        /* The "Frosted Glass" Effect */
+        .spoiler-blur {
+            filter: blur(6px); cursor: pointer; transition: filter 0.3s ease;
+            background: rgba(0,0,0,0.05);
+        }
+        .spoiler-blur:hover { filter: blur(2px); }
+        .spoiler-revealed { filter: none; }
+    </style>
+</head>
+<body>
+
+    <div class="simulator-box">
+        <h2>🚀 Try the Spoiler Blocker Live</h2>
+        <p>Type a word below (like <b>"Dragon"</b> or <b>"Stark"</b>) to test the engine.</p>
+        <input type="text" id="demoInput" placeholder="Enter keyword to block...">
+        <button onclick="runDemo()">Block It!</button>
+    </div>
+
+    <h1>House of the Dragon: Season Finale Review</h1>
+    <p>The latest episode was shocking. When the <b>Dragon</b> flew over the castle, everyone knew that the <b>Stark</b> family was in trouble.</p>
+    
+    <h3>The Plot Twist</h3>
+    <p>Nobody expected the <b>Dragon</b> to breathe fire on the throne. It was a massive turning point for House <b>Stark</b>.</p>
+
+    <script>
+        // This simulates your content.js logic
+        function runDemo() {
+            const word = document.getElementById('demoInput').value.trim();
+            if(!word) return;
+
+            const elements = document.querySelectorAll('p, h1, h3');
+            elements.forEach(element => {
+                if (element.innerText.toLowerCase().includes(word.toLowerCase())) {
+                    element.classList.add('spoiler-blur');
+                    element.title = "Click to reveal";
+                    element.onclick = () => element.classList.remove('spoiler-blur');
+                }
+            });
+            alert(`Blocked all mentions of "${word}"!`);
+        }
+    </script>
+</body>
+</html>
