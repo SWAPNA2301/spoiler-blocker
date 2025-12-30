@@ -1,4 +1,4 @@
-# 🚫 Spoiler Blocker Extension
+# Spoiler Blocker Extension
 
 A privacy-focused Chrome Extension that uses DOM manipulation to detect and blur specific keywords in real-time, preventing involuntary information exposure (spoilers) across web applications.
 
